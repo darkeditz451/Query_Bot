@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:linear-gradient(135deg,#050816,#0d1324,#111c34);
+
+    height:100vh;
+
+    overflow:hidden;
+
+    color:white;
+
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+
+    position:fixed;
+
+    top:20px;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:100;
+
+}
+
+.logo{
+
+    position:absolute;
+
+    left:40px;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#38bdf8;
+
+}
+
+.nav-menu{
+
+    display:flex;
+
+    gap:18px;
+
+    background:rgba(255,255,255,.06);
+
+    padding:10px;
+
+    border-radius:60px;
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.nav-menu a{
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 26px;
+
+    border-radius:40px;
+
+    transition:.3s;
+
+}
+
+.nav-menu a:hover{
+
+    background:#0ea5e9;
+
+    box-shadow:0 0 18px #0ea5e9;
+
+}
+
+.active{
+
+    background:#0ea5e9;
+
+    box-shadow:0 0 18px #0ea5e9;
+
+}
+
+/* ================= CHAT ================= */
+
+.chat-container{
+
+    width:900px;
+
+    height:80vh;
+
+    margin:110px auto;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(25px);
+
+    border-radius:30px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+
+    flex-direction:column;
+
+    overflow:hidden;
+
+    box-shadow:0 0 40px rgba(0,180,255,.15);
+
+}
+
+.chat-header{
+
+    padding:30px;
+
+    text-align:center;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.chat-header h1{
+
+    font-size:42px;
+
+    color:#38bdf8;
+
+}
+
+.chat-header p{
+
+    margin-top:8px;
+
+    color:#cbd5e1;
+
+}
+
+/* ================= MESSAGES ================= */
+
+.chat-box{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+/* BOT */
+
+.bot{
+
+    align-self:flex-start;
+
+    background:#16213e;
+
+    padding:15px 22px;
+
+    border-radius:20px 20px 20px 5px;
+
+    max-width:70%;
+
+}
+
+/* USER */
+
+.user{
+
+    align-self:flex-end;
+
+    background:#0ea5e9;
+
+    padding:15px 22px;
+
+    border-radius:20px 20px 5px 20px;
+
+    max-width:70%;
+
+}
+
+/* ================= INPUT ================= */
+
+.input-area{
+
+    padding:22px;
+
+    display:flex;
+
+    gap:15px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+input{
+
+    flex:1;
+
+    padding:18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:18px;
+
+    background:#0f172a;
+
+    color:white;
+
+    font-size:17px;
+
+}
+
+button{
+
+    width:140px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#0ea5e9;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 0 25px #0ea5e9;
+
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#0ea5e9;
+
+    border-radius:10px;
+
+}
+
+/* ================= FADE ================= */
+
+.bot,
+.user{
+
+    animation:fade .35s ease;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (min-width: 1400px) {
+
+    .logo {
+        font-size: 34px;
+    }
+
+    .nav-menu a {
+        padding: 14px 30px;
+        font-size: 18px;
+    }
+
+    .chat-container {
+        width: 1100px;
+        height: 82vh;
+    }
+
+    .chat-header h1 {
+        font-size: 50px;
+    }
+
+    .chat-header p {
+        font-size: 18px;
+    }
+
+    input,
+    button {
+        font-size: 19px;
+    }
+
+    button {
+        width: 160px;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .chat-container {
+        width: 92%;
+        margin: 100px auto 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    body {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        top: 12px;
+        position: static;
+        padding-top: 12px;
+    }
+
+    .logo {
+        position: static;
+        left: auto;
+        font-size: 24px;
+    }
+
+    .nav-menu {
+        gap: 8px;
+        padding: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-menu a {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
+    .chat-container {
+        width: 94%;
+        height: 85vh;
+        margin: 16px auto;
+        border-radius: 20px;
+    }
+
+    .chat-header {
+        padding: 20px;
+    }
+
+    .chat-header h1 {
+        font-size: 28px;
+    }
+
+    .chat-header p {
+        font-size: 14px;
+    }
+
+    .chat-box {
+        padding: 18px;
+        gap: 12px;
+    }
+
+    .bot,
+    .user {
+        max-width: 85%;
+        padding: 12px 16px;
+        font-size: 15px;
+    }
+
+    .input-area {
+        padding: 14px;
+        gap: 10px;
+    }
+
+    input {
+        padding: 14px;
+        font-size: 15px;
+    }
+
+    button {
+        width: 90px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-menu {
+        gap: 4px;
+    }
+
+    .nav-menu a {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .chat-container {
+        width: 96%;
+        height: 88vh;
+        margin: 10px auto;
+        border-radius: 16px;
+    }
+
+    .chat-header {
+        padding: 16px;
+    }
+
+    .chat-header h1 {
+        font-size: 22px;
+    }
+
+    .bot,
+    .user {
+        max-width: 90%;
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    button {
+        width: 70px;
+        font-size: 13px;
+        padding: 0 10px;
+    }
+}
