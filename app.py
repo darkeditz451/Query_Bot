@@ -16,6 +16,17 @@ genai.configure(api_key=api_key)
 
 model = genai.GenerativeModel("gemini-2.5-flash")
 
+# Custom keyword-based answers
+CUSTOM_KEYWORDS = [
+    (["creator"], "I was created by Mukundan and Pranit."),
+    (["made", "you"], "I was developed by Mukundan and Pranit using Flask and Google's Gemini AI."),
+    (["your", "name"], "I'm QueryBot, your smart AI assistant!"),
+    (["school"], "I was built in KG International School."),
+    (["how", "old"], "I'm a newly created AI assistant."),
+    (["chief", "minister", "tamil"], "The Chief Minister of Tamil Nadu is C. Joseph Vijay."),
+    (["cm", "tamil"], "The Chief Minister of Tamil Nadu is C. Joseph Vijay.")
+]
+
 
 @app.route("/")
 def home():
@@ -40,6 +51,17 @@ def chat():
         if not user_message:
             return jsonify({"error": "Empty message"}), 400
 
+        # Convert to lowercase
+        question = user_message.lower().strip()
+
+        # Check keyword-based custom answers
+        for keywords, answer in CUSTOM_KEYWORDS:
+            if all(word in question for word in keywords):
+                return jsonify({
+                    "reply": answer
+                })
+
+        # Otherwise ask Gemini
         response = model.generate_content(user_message)
 
         return jsonify({
