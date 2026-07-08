@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueryBot Chat</title>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='chat.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        🤖 QueryBot
+    </div>
+
+    <div class="nav-menu">
+        <a href="/">Home</a>
+        <a href="#" class="active">Chat</a>
+    </div>
+
+</nav>
+
+<div class="chat-container">
+
+    <div class="chat-header">
+        <h1>QueryBot</h1>
+        <p>Ask me anything!</p>
+    </div>
+
+    <div id="chat-box" class="chat-box">
+
+    </div>
+
+    <div class="input-area">
+
+        <input
+            id="message"
+            type="text"
+            placeholder="Type your question..."
+        >
+
+        <button id="sendBtn">
+            Send
+        </button>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='chat.js') }}"></script>
+
+</body>
+</html>
