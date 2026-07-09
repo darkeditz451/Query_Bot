@@ -18,38 +18,17 @@ model = genai.GenerativeModel("gemini-2.5-flash")
 
 # Custom keyword-based answers
 CUSTOM_KEYWORDS = [
-    (["hello"], "Hello! Welcome to our Skill Expo. I'm QueryBot. Feel free to ask me anything."),
-    (["hi"], "Hi! Welcome to our project."),
-    (["good", "morning"], "Good morning! Welcome to our Skill Expo."),
-    (["good", "afternoon"], "Good afternoon! Welcome to our Skill Expo."),
-    (["good", "evening"], "Good evening! Welcome to our Skill Expo."),
-    (["how", "are", "you"], "I'm doing great! Thanks for asking."),
-    (["thank"], "You're welcome!"),
-    (["bye"], "Goodbye! Thank you for visiting our project."),
-
-    # ===== Identity =====
-    (["your", "name"], "My name is QueryBot."),
-    (["who", "are", "you"], "I'm QueryBot, an AI assistant built for the Skill Expo."),
-    (["introduce", "yourself"], "Hello! I'm QueryBot, an AI assistant created to answer questions and demonstrate the power of artificial intelligence."),
-
-    # ===== Creators =====
-    (["which", "school", "made", "you"], "I was built at KG International School by Mukundan and Pranit."),
-    (["school", "created", "you"], "I was built at KG International School by Mukundan and Pranit."),
-    (["school", "made"], "I was built at KG International School by Mukundan and Pranit."),
-    (["who", "created", "you"], "I was created by Mukundan and Pranit."),
-    (["creator", "you"], "My creators are Mukundan and Pranit."),
-    (["who", "made", "you"], "I was developed by Mukundan and Pranit."),
-    (["made", "you"], "I was developed by Mukundan and Pranit."),
-    (["develop", "you"], "Mukundan and Pranit developed me."),
-    (["team", "you"], "I was built by Mukundan and Pranit."),
-
-    # ===== School =====
-    (["school", "name", "what", "created", "you"], "The name of my school is KG International School."),
-    (["where", "school", "kg"], "KG International School is located in Annur, Coimbatore."),
-    (["principal", "kg", "school"], "The Principal of KG International School is Mrs. Kaleshwari Srilatha."),
-    (["expo", "where"], "The Skill Expo is being held at Thangam International School, Salem."),
-    (["chief", "minister", "tamil"], "The Chief Minister of Tamil Nadu is C. Joseph Vijay."),
-    (["cm", "tamil"], "The Chief Minister of Tamil Nadu is C. Joseph Vijay.")
+    (["what","is","your","name"], "My name is QueryBot."),
+    (["who","are","you"], "I'm QueryBot, an AI assistant built for the Skill Expo."),
+    (["introduce","yourself"], "Hello! I'm QueryBot, an AI assistant created to answer questions and demonstrate the power of artificial intelligence."),
+    (["which","school","made","you"], "I was built by KG International School's Computer Science Team."),
+    (["which","school","created","you"], "I was built by KG International School's Computer Science Team."),
+    (["who","created","you"], "I was built by KG International School's Computer Science Team."),
+    (["who","made","you"], "I was built at KG International School's Computer Science Team.."),
+    (["where","school","kg"], "KG International School is located in Annur, Coimbatore."),
+    (["principal","kg","school"], "The Principal of KG International School is Mrs. Kaleshwari Srilatha."),
+    (["chief","minister","tamil", "nadu"], "The Chief Minister of Tamil Nadu is C. Joseph Vijay."),
+    (["where","is","skill", "expo","held"], "The Skill Expo is Held at Thangam International School, Salem."),
 ]
 
 
