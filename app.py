@@ -17,18 +17,39 @@ genai.configure(api_key=api_key)
 model = genai.GenerativeModel("gemini-2.5-flash")
 
 # Custom keyword-based answers
-CUSTOM_KEYWORDS = [
-    (["creator"], "I was created by Mukundan and Pranit."),
-    (["made", "you"], "I was developed by Mukundan and Pranit using Flask and Google's Gemini AI."),
-    (["your", "name"], "I'm QueryBot, your smart AI assistant!"),
-    (["school", "created"], "I was built in KG International School."),
-    (["how", "old"], "I'm a newly created AI assistant."),
-    (["chief", "minister", "tamil"], "The Chief Minister of Tamil Nadu is C. Joseph Vijay."),
-    (["cm", "tamil"], "The Chief Minister of Tamil Nadu is C. Joseph Vijay."),
-    (["school", "made"], "I was built in KG International School."),
-    (["expo", "where"], "It is happening in Thangam International School, Salem."),
-    (["KG", "where", "School"], "It is located in Annur, Coimbatore.")
-]
+    (["hello"], "Hello! Welcome to our Skill Expo. I'm QueryBot. Feel free to ask me anything."),
+    (["hi"], "Hi! Welcome to our project."),
+    (["good", "morning"], "Good morning! Welcome to our Skill Expo."),
+    (["good", "afternoon"], "Good afternoon! Welcome to our Skill Expo."),
+    (["good", "evening"], "Good evening! Welcome to our Skill Expo."),
+    (["how", "are", "you"], "I'm doing great! Thanks for asking."),
+    (["thank"], "You're welcome!"),
+    (["bye"], "Goodbye! Thank you for visiting our project."),
+
+    # ===== Identity =====
+    (["your", "name"], "My name is QueryBot."),
+    (["who", "are", "you"], "I'm QueryBot, an AI assistant built for the Skill Expo."),
+    (["introduce"], "Hello! I'm QueryBot, an AI assistant created to answer questions and demonstrate the power of artificial intelligence."),
+
+    # ===== Creators =====
+    (["which", "school", "made", "you"], "I was built at KG International School by Mukundan and Pranit."),
+    (["school", "created", "you"], "I was built at KG International School by Mukundan and Pranit."),
+    (["school", "made"], "I was built at KG International School by Mukundan and Pranit."),
+    (["who", "created", "you"], "I was created by Mukundan and Pranit."),
+    (["creator"], "My creators are Mukundan and Pranit."),
+    (["who", "made", "you"], "I was developed by Mukundan and Pranit."),
+    (["made", "you"], "I was developed by Mukundan and Pranit."),
+    (["developers"], "Mukundan and Pranit developed me."),
+    (["team"], "I was built by Mukundan and Pranit."),
+    (["student"], "Yes! I was built by students of KG International School."),
+
+    # ===== School =====
+    (["school", "name"], "The name of my school is KG International School."),
+    (["where", "school"], "KG International School is located in Annur, Coimbatore."),
+    (["kg", "international"], "KG International School is located in Annur, Coimbatore."),
+    (["principal"], "The Principal of KG International School is Mrs. Kaleshwari Srilatha."),
+     (["expo", "where"], "The Skill Expo is being held at Thangam International School, Salem.")
+    
 
 
 @app.route("/")
