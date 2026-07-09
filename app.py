@@ -17,6 +17,7 @@ genai.configure(api_key=api_key)
 model = genai.GenerativeModel("gemini-2.5-flash")
 
 # Custom keyword-based answers
+CUSTOM_KEYWORDS = [
     (["hello"], "Hello! Welcome to our Skill Expo. I'm QueryBot. Feel free to ask me anything."),
     (["hi"], "Hi! Welcome to our project."),
     (["good", "morning"], "Good morning! Welcome to our Skill Expo."),
@@ -29,27 +30,25 @@ model = genai.GenerativeModel("gemini-2.5-flash")
     # ===== Identity =====
     (["your", "name"], "My name is QueryBot."),
     (["who", "are", "you"], "I'm QueryBot, an AI assistant built for the Skill Expo."),
-    (["introduce"], "Hello! I'm QueryBot, an AI assistant created to answer questions and demonstrate the power of artificial intelligence."),
+    (["introduce", "yourself"], "Hello! I'm QueryBot, an AI assistant created to answer questions and demonstrate the power of artificial intelligence."),
 
     # ===== Creators =====
     (["which", "school", "made", "you"], "I was built at KG International School by Mukundan and Pranit."),
     (["school", "created", "you"], "I was built at KG International School by Mukundan and Pranit."),
     (["school", "made"], "I was built at KG International School by Mukundan and Pranit."),
     (["who", "created", "you"], "I was created by Mukundan and Pranit."),
-    (["creator"], "My creators are Mukundan and Pranit."),
+    (["creator", "you"], "My creators are Mukundan and Pranit."),
     (["who", "made", "you"], "I was developed by Mukundan and Pranit."),
     (["made", "you"], "I was developed by Mukundan and Pranit."),
-    (["developers"], "Mukundan and Pranit developed me."),
-    (["team"], "I was built by Mukundan and Pranit."),
-    (["student"], "Yes! I was built by students of KG International School."),
+    (["develop", "you"], "Mukundan and Pranit developed me."),
+    (["team", "you"], "I was built by Mukundan and Pranit."),
 
     # ===== School =====
     (["school", "name"], "The name of my school is KG International School."),
-    (["where", "school"], "KG International School is located in Annur, Coimbatore."),
-    (["kg", "international"], "KG International School is located in Annur, Coimbatore."),
-    (["principal"], "The Principal of KG International School is Mrs. Kaleshwari Srilatha."),
-     (["expo", "where"], "The Skill Expo is being held at Thangam International School, Salem.")
-    
+    (["where", "school", "kg"], "KG International School is located in Annur, Coimbatore."),
+    (["principal", "kg", "school"], "The Principal of KG International School is Mrs. Kaleshwari Srilatha."),
+    (["expo", "where"], "The Skill Expo is being held at Thangam International School, Salem."),
+]
 
 
 @app.route("/")
@@ -70,33 +69,36 @@ def chat():
         if not data:
             return jsonify({"error": "No data received"}), 400
 
-        user_message = data.get("message", "")
+        user_message = data.get("message", "").strip()
 
         if not user_message:
             return jsonify({"error": "Empty message"}), 400
 
-        # Convert to lowercase
-        question = user_message.lower().strip()
+        question = user_message.lower()
 
-        # Check keyword-based custom answers
+        # ===== Smart Keyword Matching =====
+        best_match = None
+        best_score = 0
+
         for keywords, answer in CUSTOM_KEYWORDS:
-            if all(word in question for word in keywords):
-                return jsonify({
-                    "reply": answer
-                })
+            score = sum(1 for word in keywords if word in question)
+            required = max(1, (len(keywords) + 1) // 2)
 
-        # Otherwise ask Gemini
+            if score >= required and score > best_score:
+                best_score = score
+                best_match = answer
+
+        if best_match:
+            return jsonify({"reply": best_match})
+
+        # ===== Gemini =====
         response = model.generate_content(user_message)
 
-        return jsonify({
-            "reply": response.text
-        })
+        return jsonify({"reply": response.text})
 
     except Exception as e:
         print("ERROR:", e)
-        return jsonify({
-            "error": str(e)
-        }), 500
+        return jsonify({"error": str(e)}), 500
 
 
 if __name__ == "__main__":
