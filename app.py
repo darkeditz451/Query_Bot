@@ -21,10 +21,11 @@ CUSTOM_KEYWORDS = [
     (["creator"], "I was created by Mukundan and Pranit."),
     (["made", "you"], "I was developed by Mukundan and Pranit using Flask and Google's Gemini AI."),
     (["your", "name"], "I'm QueryBot, your smart AI assistant!"),
-    (["school"], "I was built in KG International School."),
+    (["school", "created"], "I was built in KG International School."),
     (["how", "old"], "I'm a newly created AI assistant."),
     (["chief", "minister", "tamil"], "The Chief Minister of Tamil Nadu is C. Joseph Vijay."),
     (["cm", "tamil"], "The Chief Minister of Tamil Nadu is C. Joseph Vijay.")
+    (["school", "made"], "I was built in KG International School."),
 ]
 
 
