@@ -44,11 +44,14 @@ CUSTOM_KEYWORDS = [
     (["team", "you"], "I was built by Mukundan and Pranit."),
 
     # ===== School =====
-    (["school", "name"], "The name of my school is KG International School."),
+    (["school", "name", "what", "created", "you"], "The name of my school is KG International School."),
     (["where", "school", "kg"], "KG International School is located in Annur, Coimbatore."),
     (["principal", "kg", "school"], "The Principal of KG International School is Mrs. Kaleshwari Srilatha."),
     (["expo", "where"], "The Skill Expo is being held at Thangam International School, Salem."),
 ]
+
+    (["chief", "minister", "tamil"], "The Chief Minister of Tamil Nadu is C. Joseph Vijay."),
+    (["cm", "tamil"], "The Chief Minister of Tamil Nadu is C. Joseph Vijay.")
 
 
 @app.route("/")
