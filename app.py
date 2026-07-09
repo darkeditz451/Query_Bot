@@ -24,8 +24,8 @@ CUSTOM_KEYWORDS = [
     (["school", "created"], "I was built in KG International School."),
     (["how", "old"], "I'm a newly created AI assistant."),
     (["chief", "minister", "tamil"], "The Chief Minister of Tamil Nadu is C. Joseph Vijay."),
-    (["cm", "tamil"], "The Chief Minister of Tamil Nadu is C. Joseph Vijay.")
-    (["school", "made"], "I was built in KG International School."),
+    (["cm", "tamil"], "The Chief Minister of Tamil Nadu is C. Joseph Vijay."),
+    (["school", "made"], "I was built in KG International School.")
 ]
 
 
