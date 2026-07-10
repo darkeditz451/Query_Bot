@@ -71,11 +71,18 @@ CUSTOM_PHRASES = {
     "where is skill expo held":
         "The Skill Expo is held at Thangam International School, Salem.",
 
-    "Who is the cheif minister of tamilnadu":
-        "The Cheif Minister of Tamilnadu is C.Joseph Vijay.",
+    "Who is the chief minister of tamilnadu":
+        "The Chief Minister of Tamilnadu is C.Joseph Vijay.",
 
     "Who is the cm of tamilnadu":
-        "The Cheif Minister of Tamilnadu is C.Joseph Vijay."
+        "The Chief Minister of Tamilnadu is C.Joseph Vijay."
+
+    "who is the Chief minister of tamilnadu":
+        "The Chief Minister of Tamilnadu is C.Joseph Vijay.",
+
+    "who is the cm of tamilnadu":
+        "The Chief Minister of Tamilnadu is C.Joseph Vijay."
+    
 }
 
 
