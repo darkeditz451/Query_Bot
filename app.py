@@ -69,10 +69,10 @@ CUSTOM_PHRASES = {
         "The Principal of KG International School is Mrs. Kaleshwari Srilatha.",
 
     "where is skill expo held":
-        "The Skill Expo is held at Thangam International School, Salem."
+        "The Skill Expo is held at Thangam International School, Salem.",
 
     "Who is the cheif minister of tamilnadu":
-        "The Cheif Minister of Tamilnadu is C.Joseph Vijay."
+        "The Cheif Minister of Tamilnadu is C.Joseph Vijay.",
 
     "Who is the cm of tamilnadu":
         "The Cheif Minister of Tamilnadu is C.Joseph Vijay."
