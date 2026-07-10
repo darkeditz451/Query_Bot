@@ -75,7 +75,7 @@ CUSTOM_PHRASES = {
         "The Chief Minister of Tamilnadu is C.Joseph Vijay.",
 
     "Who is the cm of tamilnadu":
-        "The Chief Minister of Tamilnadu is C.Joseph Vijay."
+        "The Chief Minister of Tamilnadu is C.Joseph Vijay.",
 
     "who is the Chief minister of tamilnadu":
         "The Chief Minister of Tamilnadu is C.Joseph Vijay.",
